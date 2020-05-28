@@ -11,6 +11,10 @@ class LarryDash extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         bottomNavigationBar: LDBottomNavigationBar(),
+        floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.add),
+          onPressed: null,
+        ),
       ),
     );
   }
