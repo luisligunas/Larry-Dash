@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:larry_dash/bottom_navigation_bar.dart';
+import 'package:larry_dash/home_page_list_view.dart';
 import 'package:larry_dash/top_navigation_bar.dart';
 
 void main() {
@@ -17,9 +18,10 @@ class LarryDash extends StatelessWidget {
           onPressed: null,
         ),
         body: SafeArea(
-          child: Stack(
+          child: Column(
             children: <Widget>[
               LDTopNavigationBar(),
+              Expanded(child: LDHomePageListView()),
             ],
           ),
         ),
