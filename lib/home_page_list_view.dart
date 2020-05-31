@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'tweet_model.dart';
 
 class LDHomePageListView extends StatefulWidget {
+  const LDHomePageListView({Key key}) : super(key: key);
+
   @override
   _LDHomePageListViewState createState() => _LDHomePageListViewState();
 }
