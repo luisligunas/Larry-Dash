@@ -29,7 +29,7 @@ class _LDHomePageListViewState extends State<LDHomePageListView> {
       ),
     ),
     Tweet(
-      text: "Dash is the coolest Incredible.",
+      text: "Dash is the coolest Incredible. Mr. Incredible is just some lame guy who can lift things. He has no finesse whatsoever. Peace out, gotta find my super suit.",
       user: User(
         displayName: "Frozone",
         handle: "wheresMySuperSuit",
