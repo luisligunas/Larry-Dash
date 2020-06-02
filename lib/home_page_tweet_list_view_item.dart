@@ -49,11 +49,65 @@ class _TweetListViewItemState extends State<TweetListViewItem> {
                           color: Colors.black,
                         ),
                       ),
-                      SizedBox(width: 3,),
-                      Text("@" + user.handle,),
+                      SizedBox(
+                        width: 3,
+                      ),
+                      Text(
+                        "@" + user.handle,
+                      ),
                     ],
                   ),
-                  Text(tweet.text,),
+                  Text(
+                    tweet.text,
+                  ),
+                  Row(
+                    // mainAxisAlignment: MainAxisAlignment.start,
+                    // crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Expanded(
+                        child: Row(
+                          children: <Widget>[
+                            Align(
+                              child: Icon(
+                                Icons.reply,
+                              ),
+                              alignment: Alignment.centerLeft,
+                            ),
+                            SizedBox(width: 3),
+                            Text(tweet.replies.toString()),
+                          ],
+                        ),
+                      ),
+                      Expanded(
+                        child: Row(
+                          children: <Widget>[
+                            Align(
+                              child: Icon(
+                                Icons.favorite,
+                              ),
+                              alignment: Alignment.centerLeft,
+                            ),
+                            SizedBox(width: 3),
+                            Text(tweet.replies.toString()),
+                          ],
+                        ),
+                      ),
+                      Expanded(
+                        child: Row(
+                          children: <Widget>[
+                            Align(
+                              child: Icon(
+                                Icons.restore,
+                              ),
+                              alignment: Alignment.centerLeft,
+                            ),
+                            SizedBox(width: 3),
+                            Text(tweet.replies.toString()),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ],
               ),
             ),
