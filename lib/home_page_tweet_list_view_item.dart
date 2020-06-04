@@ -65,45 +65,72 @@ class _TweetListViewItemState extends State<TweetListViewItem> {
                     // crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Expanded(
-                        child: Row(
-                          children: <Widget>[
-                            Align(
-                              child: Icon(
-                                Icons.reply,
+                        child: GestureDetector(
+                          behavior: HitTestBehavior.translucent,
+                          child: Row(
+                            children: <Widget>[
+                              Align(
+                                child: Icon(
+                                  Icons.reply,
+                                  color: Colors.grey,
+                                ),
+                                alignment: Alignment.centerLeft,
                               ),
-                              alignment: Alignment.centerLeft,
-                            ),
-                            SizedBox(width: 3),
-                            Text(tweet.replies.toString()),
-                          ],
+                              SizedBox(width: 3),
+                              Text(tweet.replies.toString()),
+                            ],
+                          ),
+                          onTap: () {
+                            print("TODO: Show compose reply screen");
+                          },
                         ),
                       ),
                       Expanded(
-                        child: Row(
-                          children: <Widget>[
-                            Align(
-                              child: Icon(
-                                Icons.favorite,
+                        child: GestureDetector(
+                          behavior: HitTestBehavior.translucent,
+                          child: Row(
+                            children: <Widget>[
+                              Align(
+                                child: Icon(
+                                  Icons.restore,
+                                  color: tweet.retweeted ? Colors.green : Colors.grey,
+                                ),
+                                alignment: Alignment.centerLeft,
                               ),
-                              alignment: Alignment.centerLeft,
-                            ),
-                            SizedBox(width: 3),
-                            Text(tweet.replies.toString()),
-                          ],
+                              SizedBox(width: 3),
+                              Text(tweet.retweets.toString()),
+                            ],
+                          ),
+                          onTap: () {
+                            setState(() {
+                              tweet.retweeted = !tweet.retweeted;
+                              tweet.retweeted ? tweet.retweets++ : tweet.retweets--;
+                            });
+                          },
                         ),
                       ),
                       Expanded(
-                        child: Row(
-                          children: <Widget>[
-                            Align(
-                              child: Icon(
-                                Icons.restore,
+                        child: GestureDetector(
+                          behavior: HitTestBehavior.translucent,
+                          child: Row(
+                            children: <Widget>[
+                              Align(
+                                child: Icon(
+                                  Icons.favorite,
+                                  color: tweet.liked ? Colors.red : Colors.grey,
+                                ),
+                                alignment: Alignment.centerLeft,
                               ),
-                              alignment: Alignment.centerLeft,
-                            ),
-                            SizedBox(width: 3),
-                            Text(tweet.replies.toString()),
-                          ],
+                              SizedBox(width: 3),
+                              Text(tweet.likes.toString()),
+                            ],
+                          ),
+                          onTap: () {
+                            setState(() {
+                              tweet.liked = !tweet.liked;
+                              tweet.liked ? tweet.likes++ : tweet.likes--;
+                            });
+                          },
                         ),
                       ),
                     ],

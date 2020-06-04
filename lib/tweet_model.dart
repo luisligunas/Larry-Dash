@@ -4,11 +4,14 @@ class Tweet {
   User user;
   String text;
   // TODO: Add array of images or some generalization of "media".
-  int replies = 0;
-  int likes = 0;
-  int retweets = 0;
+  int replies;
+  int likes;
+  int retweets;
 
-  Tweet({this.user, this.text, this.replies, this.likes, this.retweets});
+  bool liked;
+  bool retweeted;
+
+  Tweet({this.user, this.text, this.replies = 0, this.likes = 0, this.retweets = 0, this.liked = false, this.retweeted = false});
 
   String getText() {
     return text;
